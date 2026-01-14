@@ -27,5 +27,6 @@ ENV K_DIM=12
 ENV HF_HOME=/runpod-volume/huggingface-cache
 ENV TRANSFORMERS_CACHE=/runpod-volume/huggingface-cache/hub
 
-# Run the handler
+# Override vLLM's entrypoint to run our handler instead
+ENTRYPOINT []
 CMD ["python", "handler.py"]
