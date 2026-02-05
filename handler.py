@@ -458,8 +458,8 @@ def pooled_handler_v2(input_data: Dict) -> Generator[Dict, None, None]:
         "node_count": node_count,
     }
 
-    # Build callback URL (orchestrator expects artifacts at /callback/generated)
-    callback_url = f"{orchestrator_url}/callback/generated"
+    # Build callback URL (vLLM will append /generated automatically)
+    callback_url = f"{orchestrator_url}/callback"
 
     # Start continuous generation
     logger.info("Starting artifact generation...")
